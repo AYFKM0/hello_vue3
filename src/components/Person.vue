@@ -27,10 +27,13 @@
     function changePerson() {
         person.value = {name:'李四',age:12}
     }
-    //监视
-    watch(person,(newValue,oldValue)=>{
-        console.log(newValue,oldValue)
-    })
+    //监视 ref定义的
+    const x = watch(person,(newValue,oldValue)=>{
+        console.log('person变化了',newValue,oldValue)
+        // if (newValue.name=='李四'){
+        //     x()
+        // }
+    },{deep:true,immediate:true})
 </script>
 
 <style scoped>
