@@ -2,21 +2,33 @@
     <div class="Sum">
        <h2>当前求和为：{{ sum }}</h2>
        <button @click="changeSum">sum+1</button>
+       <button @click="changeMin">minus-1</button>
     </div>
 </template>
 
 <script lang="ts" setup name="Sum">
-    import {ref,watch} from 'vue'
+    import {ref,watch,watchEffect} from 'vue'
 
     let sum = ref(0)
+    let minus = ref(10)
 
     function changeSum(){
-        sum.value += 1
+        sum.value ++
+    }
+    function changeMin(){
+        minus.value --
     }
 
-    watch(sum,(newValue,oldValue)=>{
-        if(newValue==10){
-            console.log('sum已经到10了')
+    // watch([sum,minus],(value)=>{
+    //     //解构赋值
+    //     let [newsum,newminus] = value
+    //     console.log(newsum,newminus)
+
+    // })
+
+    watchEffect(()=>{
+        if(sum.value >= 10){
+            console.log('abc')
         }
     })
 </script>

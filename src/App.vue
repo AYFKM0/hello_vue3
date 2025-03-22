@@ -1,21 +1,22 @@
-<template>   
-    <Person/>
-<!-- html -->
+<template> 
+    <!-- <Test :list="personList"/> -->
+    <Hooks/>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup name ="App">
 //js or ts
+    import Hooks from './components/Hooks.vue';
+    import Lifecycle from './components/Lifecycle.vue';
+    import Test from './components/Test.vue';
     import Person from './components/Person.vue';
     import Car from './components/Car.vue'
     import Name from './components/Name.vue';
     import Sum from './components/Sum.vue';
-    export default {
-        name:'App',//组件名
-        components:{Person,Car,Name,Sum}//注册组件
-    }
+
+    
 </script>
 
-<style>
+<style scoped>
 /*样式*/
     .app {
         background-color: #ddd;
