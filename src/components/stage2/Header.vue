@@ -1,21 +1,10 @@
-<template> 
-    <div class="app">
-        <Header></Header>
-        <div class="navigate">
-            <RouterLink replace :to="{name:'首页'}" active-class="active">首页</RouterLink>
-            <RouterLink replace :to="{name:'新闻'}" active-class="active">新闻</RouterLink>
-            <RouterLink replace :to="{name:'关于'}" active-class="active">关于</RouterLink>
-        </div>
-
-        <div class="main-content">
-            <RouterView></RouterView>
-        </div>
-    </div>
+<template>
+  <h2 class="title">Vue路由测试</h2>
 </template>
 
-<script lang="ts" setup name ="App">
-  import { RouterView,RouterLink } from 'vue-router'
-  import Header from './components/stage2/Header.vue';
+
+<script setup lang='ts' name=''>
+
 </script>
 
 <style>
@@ -65,4 +54,3 @@
     border: 1px solid;
   }
 </style>
-
